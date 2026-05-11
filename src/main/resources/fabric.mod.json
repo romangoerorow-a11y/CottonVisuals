@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "cottonvisuals",
+  "version": "1.0.0",
+  "name": "Cotton Visuals",
+  "description": "Beautiful visual-only Fabric mod for Minecraft 1.21.4",
+  "authors": ["Cotton Team"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["dev.cotton.core.CottonVisuals"]
+  },
+  "mixins": ["cottonvisuals.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "fabric-api": "*",
+    "minecraft": "1.21.4",
+    "java": ">=21"
+  }
+}
