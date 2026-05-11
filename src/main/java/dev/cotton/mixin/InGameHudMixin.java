@@ -39,7 +39,7 @@ public class InGameHudMixin {
         Module playerInfoMod = CottonVisuals.moduleManager.getByName("Player Info");
         if (playerInfoMod != null && playerInfoMod.isEnabled()) {
             int fps = (int)(1.0 / tickDelta);
-            String infoText = "FPS: " + MinecraftClient.getCurrentFps();
+            String infoText = "FPS: " + mc.getCurrentFps();
             int screenW = context.getScaledWindowWidth();
             int textW = mc.textRenderer.getWidth(infoText);
             context.fill(screenW - textW - 12, 4, screenW - 4, 14, 0xAA0D0B18);
