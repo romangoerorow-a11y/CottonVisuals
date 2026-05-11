@@ -20,7 +20,6 @@ public class CottonVisuals implements ClientModInitializer {
     public static ModuleManager moduleManager;
     public static ClickGui      clickGui;
 
-    /** Right Shift — opens/closes Click GUI */
     private static KeyBinding openGuiKey;
 
     @Override
@@ -30,7 +29,7 @@ public class CottonVisuals implements ClientModInitializer {
         moduleManager = new ModuleManager();
         moduleManager.init();
 
-        // ── Key binding ─────────────────────────────────────────────────────
+        // Register keybinding — Right Shift
         openGuiKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.cottonvisuals.opengui",
                 InputUtil.Type.KEYSYM,
@@ -38,7 +37,7 @@ public class CottonVisuals implements ClientModInitializer {
                 "category.cottonvisuals"
         ));
 
-        // ── Tick listener ────────────────────────────────────────────────────
+        // Tick listener — open GUI when key pressed
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (openGuiKey.wasPressed()) {
                 if (client.player != null) {
